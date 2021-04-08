@@ -1,13 +1,15 @@
 <?php
 	include("chkSession.php");
     include("connection.php");
+	include("navbar.php");
 
     //se non esiste crea la variabile $nome per applicare il filtro sugli articoli
-	if(!empty($_GET['filter']))
-        $nome = $_GET['filter'];
+	if(!empty($_GET['nameFilter']))
+        $name = $_GET['nameFilter'];
 ?>
 <html>
 	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<div class="container"> <!--fluid-->
@@ -21,10 +23,10 @@
 			/*creo la query e se esiste la variabile $nome seleziono sono gli articoli aventi la variabile all'interno del nome, altrimenti li 
 			visualizzo tutti*/
 			$sql = "SELECT ID,name,characteristics,price,img FROM products WHERE";
-			if(empty($nome) || $nome == "null")
+			if(empty($name) || $name == "null")
 				$sql .= " 1 ORDER BY name";
 			else 
-				$sql .= " nome LIKE '%". $filter . "%' ORDER BY name";
+				$sql .= " name LIKE '%".$name. "%' ORDER BY name";
 				
 			$result = $conn->query($sql);
 
@@ -48,10 +50,10 @@
 					echo '<div class="col-sm-3">';
 					
 					echo '<div class="">';
-					echo "<a href = 'product.php?idArticolo=".$row["ID"]."'><img class='' width='150px' height='auto' src='".$_SESSION["imgFolder"].$row["img"]."'></br>";
+					echo "<a href = 'infoProduct.php?idArticolo=".$row["ID"]."'><img class='imgProducts' src='".$_SESSION["imgFolder"].$row["img"]."'></br>";
 					echo '</div>';
 					
-					echo "<a href = 'product.php?idArticolo=".$row["ID"]."' class=''>".$row["name"]."</a>
+					echo "<a href = 'infoProduct.php?idArticolo=".$row["ID"]."' class=''>".$row["name"]."</a>
 							".$row["price"]." €</br>";
 					echo '</div>';	
 					

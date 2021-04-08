@@ -1,0 +1,14 @@
+.imgProduct{
+    width: 300px;
+    height: auto;
+}
+
+.imgProducts{
+    width: 150px;
+    height: 150px;
+}
+
+.tableProduct, tr{
+    width: 100%;
+    border: 1px solid black;
+}
