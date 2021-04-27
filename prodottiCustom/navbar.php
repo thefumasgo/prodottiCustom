@@ -26,15 +26,27 @@
             <ul class="navbar-nav mr-auto">
                 
                 <li class="nav-item">
-                    <a class='nav-link' href = 'up.php'>Insert new product</a>
+                    <a class='nav-link' href = 'up.php'>Inserisci nuovo prodotto</a>
                 </li>
             
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Category</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Categoria</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Category 1</a>
-                        <a class="dropdown-item" href="#">Category 2</a>
-                        <a class="dropdown-item" href="#">Category 3</a>
+                        <a class="dropdown-item" href="list.php?cat=interni">Interni</a>
+                        <a class="dropdown-item" href="list.php?cat=esterni">Esterni</a>
+                        <a class="dropdown-item" href="list.php?cat=ottiche">Ottiche</a>
+                        <a class="dropdown-item" href="list.php?cat=binarieCanaline">Binarie canaline</a>
+                    </div>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Potenza</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="list.php?min=1&max=10">0-10</a>
+                        <a class="dropdown-item" href="list.php?min=10&max=25">10-25</a>
+                        <a class="dropdown-item" href="list.php?min=25&max=50">25-50</a>
+                        <a class="dropdown-item" href="list.php?min=50&max=70">50-70</a>
+                        <a class="dropdown-item" href="list.php?min=70&max=10000">70+</a>
                     </div>
                 </li>
             

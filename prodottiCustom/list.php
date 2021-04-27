@@ -4,8 +4,30 @@
 	include("navbar.php");
 
     //se non esiste crea la variabile $nome per applicare il filtro sugli articoli
-	if(!empty($_GET['nameFilter']))
-        $name = $_GET['nameFilter'];
+
+	if(!empty($_GET['nameFilter'])){
+		$_SESSION['name'] = $_GET['nameFilter'];
+	}else{
+		$_SESSION['name']=null;
+	}
+
+		
+	if(!empty($_GET['cat'])){
+		$_SESSION['cat'] = $_GET['cat'];
+	}else{
+		$_SESSION['cat']=null;
+	}
+
+	if(!empty($_GET['min']) && !empty($_GET['max'])){
+		$potMin = $_GET['min'];
+		$potMax = $_GET['max'];
+	}else{
+		$potMin = null;
+		$potMax = null;
+	}
+	
+	$name = $_SESSION['name'];
+	$cat = $_SESSION['cat'];
 ?>
 <html>
 	<head>
@@ -23,11 +45,22 @@
 			/*creo la query e se esiste la variabile $nome seleziono sono gli articoli aventi la variabile all'interno del nome, altrimenti li 
 			visualizzo tutti*/
 			$sql = "SELECT ID,name,characteristics,price,img FROM products WHERE";
-			if(empty($name) || $name == "null")
-				$sql .= " 1 ORDER BY name";
-			else 
-				$sql .= " name LIKE '%".$name. "%' ORDER BY name";
+			if(!empty($name) || !$name == null){
+				$sql .= " name LIKE '%".$name. "%' AND";
+			}
+			
+			if(!empty($cat) || !$cat == null){
+				$sql .= " categoria='".$cat."' AND";
+			}
+			
+			if(!empty($potMin) || !$potMin == null && !empty($potMax) || !$potMax == null){
+				$sql .= " potenza BETWEEN '".$potMin."' AND '".$potMax."' AND";
+			}
+
+			$sql .= " 1 ORDER BY name";
 				
+			//echo $sql;
+
 			$result = $conn->query($sql);
 
 			$count = 4;	
