@@ -44,9 +44,13 @@
 		<?php
 			/*creo la query e se esiste la variabile $nome seleziono sono gli articoli aventi la variabile all'interno del nome, altrimenti li 
 			visualizzo tutti*/
-			$sql = "SELECT ID,name,characteristics,price,img FROM products WHERE";
+			$sql = "SELECT ID,name,characteristics,price,categoria,colorazione,img FROM products WHERE";
 			if(!empty($name) || !$name == null){
-				$sql .= " name LIKE '%".$name. "%' AND";
+				$sql .= " name LIKE '%".$name. "%' 
+				OR characteristics LIKE '%".$name. "%'
+				OR colorazione LIKE '%".$name. "%'
+				OR categoria LIKE '%".$name. "%'
+				AND";
 			}
 			
 			if(!empty($cat) || !$cat == null){
