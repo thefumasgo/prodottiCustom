@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Apr 27, 2021 alle 20:53
+-- Creato il: Mag 26, 2021 alle 08:48
 -- Versione del server: 10.4.14-MariaDB
 -- Versione PHP: 7.4.11
 
@@ -68,7 +68,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID`, `Username`, `Password`) VALUES
-(1, 'pippo', 'f7b2993185f755d2212840328001bb2f');
+(1, 'pippo', 'f7b2993185f755d2212840328001bb2f'),
+(2, 'prova', 'e32ae4e0d9158c00684ec73ce7803ab1');
 
 --
 -- Indici per le tabelle scaricate
@@ -101,7 +102,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT per la tabella `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
