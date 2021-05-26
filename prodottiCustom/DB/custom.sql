@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 26, 2021 alle 08:48
--- Versione del server: 10.4.14-MariaDB
--- Versione PHP: 7.4.11
+-- Creato il: Mag 26, 2021 alle 11:49
+-- Versione del server: 10.4.6-MariaDB
+-- Versione PHP: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -29,27 +30,55 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `products` (
   `ID` int(11) NOT NULL,
-  `name` varchar(64) NOT NULL,
-  `characteristics` text NOT NULL,
-  `price` float NOT NULL,
-  `data` date DEFAULT NULL,
-  `potenza` int(5) NOT NULL,
-  `categoria` varchar(16) NOT NULL,
-  `colorazione` varchar(32) NOT NULL,
   `img` varchar(32) NOT NULL,
-  `file` varchar(32) NOT NULL
+  `file` varchar(32) NOT NULL,
+  `projectName` varchar(32) NOT NULL,
+  `idUtente` int(11) NOT NULL,
+  `partnersName` varchar(32) NOT NULL,
+  `projectTiming` varchar(32) NOT NULL,
+  `Specifier` varchar(32) NOT NULL,
+  `location` varchar(32) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `projectClientValue` int(11) NOT NULL,
+  `priority` int(1) NOT NULL,
+  `leadTime` int(11) NOT NULL,
+  `informationPriority` varchar(32) NOT NULL,
+  `costumizationTipe` varchar(32) NOT NULL,
+  `colorTemperature` int(11) NOT NULL,
+  `CRI` int(11) NOT NULL,
+  `stepMacAdam` int(2) NOT NULL,
+  `beamAngle` int(11) NOT NULL,
+  `ipRate` varchar(32) NOT NULL,
+  `power` int(11) NOT NULL,
+  `lumenOutput` int(11) NOT NULL,
+  `intensity` int(11) NOT NULL,
+  `efficacy` int(11) NOT NULL,
+  `dimmability` int(1) NOT NULL,
+  `diverIncludes` int(1) NOT NULL,
+  `diverPosition` int(1) NOT NULL,
+  `supplyVoltage` int(11) NOT NULL,
+  `supplyFrequency` int(11) NOT NULL,
+  `lifetime` varchar(32) NOT NULL,
+  `madeIn` varchar(32) NOT NULL,
+  `certification` varchar(32) NOT NULL,
+  `colorFinish` varchar(32) NOT NULL,
+  `reggianiRef` int(11) NOT NULL,
+  `conpetitor` varchar(32) NOT NULL,
+  `competitorProduct` varchar(32) NOT NULL,
+  `sampleRequired` int(1) NOT NULL,
+  `targetPrice` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `products`
 --
 
-INSERT INTO `products` (`ID`, `name`, `characteristics`, `price`, `data`, `potenza`, `categoria`, `colorazione`, `img`, `file`) VALUES
-(1, 'Lampada', 'Lampada da lettura', 19.99, '2021-04-27', 17, 'Esterni', 'bianco', 'lampada.jpg', ''),
-(3, 'lampadina', 'lampadina che fa luce', 5.99, '2021-04-08', 20, 'esterni', 'bianco', 'lampadina.jpg', 'lampadina.pdf'),
-(4, 'lampione', 'lampione da giardino', 56.5, '2021-04-10', 80, 'ottiche', 'carbone', 'lampione.jpg', ''),
-(5, 'bajour', 'bajour per leggere', 32, '2021-04-11', 12, 'Esterni', 'nero', 'bajour.jpg', 'bajour.pdf'),
-(6, 'lampadario', 'lampadario rinascimentale ', 129.99, '2021-04-18', 60, 'interni', 'blu', 'lampadario.jpg', 'lampadario.pdf');
+INSERT INTO `products` (`ID`, `img`, `file`, `projectName`, `idUtente`, `partnersName`, `projectTiming`, `Specifier`, `location`, `quantity`, `projectClientValue`, `priority`, `leadTime`, `informationPriority`, `costumizationTipe`, `colorTemperature`, `CRI`, `stepMacAdam`, `beamAngle`, `ipRate`, `power`, `lumenOutput`, `intensity`, `efficacy`, `dimmability`, `diverIncludes`, `diverPosition`, `supplyVoltage`, `supplyFrequency`, `lifetime`, `madeIn`, `certification`, `colorFinish`, `reggianiRef`, `conpetitor`, `competitorProduct`, `sampleRequired`, `targetPrice`) VALUES
+(1, 'lampada.jpg', '', '', 0, '', '', '', '', 0, 0, 0, 0, '', '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0, 0),
+(3, 'lampadina.jpg', 'lampadina.pdf', '', 0, '', '', '', '', 0, 0, 0, 0, '', '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0, 0),
+(4, 'lampione.jpg', '', '', 0, '', '', '', '', 0, 0, 0, 0, '', '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0, 0),
+(5, 'bajour.jpg', 'bajour.pdf', '', 0, '', '', '', '', 0, 0, 0, 0, '', '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0, 0),
+(6, 'lampadario.jpg', 'lampadario.pdf', '', 0, '', '', '', '', 0, 0, 0, 0, '', '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -68,8 +97,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID`, `Username`, `Password`) VALUES
-(1, 'pippo', 'f7b2993185f755d2212840328001bb2f'),
-(2, 'prova', 'e32ae4e0d9158c00684ec73ce7803ab1');
+(1, 'pippo', 'f7b2993185f755d2212840328001bb2f');
 
 --
 -- Indici per le tabelle scaricate
@@ -79,8 +107,7 @@ INSERT INTO `users` (`ID`, `Username`, `Password`) VALUES
 -- Indici per le tabelle `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `Name` (`name`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indici per le tabelle `users`
@@ -102,7 +129,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT per la tabella `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
