@@ -9,13 +9,34 @@
 	$upPdf = 'D:/andre/XAMPP/htdocs/prodottiCustom/file/';
 	$upFilePdf = $upPdf . basename($_FILES['filepdf']['name']);
 	
-	$nome=$_POST["nameNome"];
-	$data=$_POST["nameData"];
-	$prezzo=$_POST["namePrezzo"];
-	$categoria=$_POST["nameCategoria"];
-	$potenza=$_POST["namePotenza"];
-	$descrizione=$_POST["nameDesc"];
-	$colorazione=$_POST["nameColorazione"];
+	$nome=$_POST["nameProject"];
+	$idUtente=$_POST["nameIdUtente"];
+	$partner=$_POST["namePartner"];
+	$specifier=$_POST["nameSpecifier"];
+	$leadtime=$_POST["nameLeadTime"];
+	$customizationType=$_POST["nameCustomizationType"];
+	$colorTemperature=$_POST["nameTemperature"];
+	$cri = $_POST["nameCRI"];
+	$step = $_POST["nameStep"];
+	$bean = $_POST["nameBean"];
+	$ip = $_POST["nameIP"];
+	$power = $_POST["namePower"];
+	$lumen = $_POST["nameLumen"];
+	$intensity = $_POST["nameIntensity"];
+	$efficacy = $_POST["nameEfficacy"];
+	$dimmability = $_POST["nameDimmability"];
+	$drives = $_POST["nameDrivesInc"];
+	$drivesP = $_POST["nameDrivesPos"];
+	$supply = $_POST["nameVoltage"];
+	$supplyF = $_POST["nameFrequency"];
+	$lifetime = $_POST["nameLifetime"];
+	$certification = $_POST["nameCertification"];
+	$colorFinish = $_POST["nameColorFinish"];
+	$ref = $_POST["nameRef"];
+	$competitor = $_POST["nameCompetitor"];
+	$competitorP = $_POST["nameCompetitorProduct"];
+	$price = $_POST["namePrice"];
+	
  
 	//$_FILES['userfile']['tmp_name']: Il nome del file temporaneo in cui il file caricato è salvato sul server.
 	if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
@@ -35,8 +56,8 @@
 	$pdf = (explode("/",$upFilePdf));
 	
 	//query per inserire il nuovo articolo all'intenro del dataBase
-	$sql = "INSERT INTO products (name, characteristics, price, data, potenza, categoria, colorazione,img,file)";
-	$sql .= " VALUES ('".$nome."','".$descrizione."', '".$prezzo."', '".$data."', '".$potenza."', '".$categoria."', '".$colorazione."', '".$img[sizeof($img) - 1]."', '".$pdf[sizeof($img) - 1]."')";
+	$sql = "INSERT INTO products (img, file, projectName, idUtente, partnersName , Specifier, leadTime,costumizationType,colorTemperature, CRI, stepMacAdam, beanAngle, ipRate, power, lumenOutput, intensity, efficacy, dimmability, driverIncluded, driverPosition, supplyVoltage, supplyFrequency, lifetime, madeIn, certification, colorFinish, reggianiRef, competitor, competitorProduct, targetPrice)";
+	$sql .= " VALUES ('".$img[sizeof($img) - 1]."', '".$pdf[sizeof($img) - 1]."','".$nome."','".$idUtente."', '".$partner."', '".$specifier."', '".$leadtime."', '".$customizationType."', '".$colorTemperature."', '".$cri."', '".$step."', '".$bean."', '".$ip."', '".$power."', '".$lumen."', '".$intensity."', '".$efficacy."', '".$dimmability."', '".$drives."', '".$drivesP."', '".$supply."', '".$supplyF."','".$lifetime."','".$certification."','".$colorFinish."', '".$ref."', '".$competitor."', '".$competitorP."', '".$price."')";
 	
 	//echo $sql;
 	
