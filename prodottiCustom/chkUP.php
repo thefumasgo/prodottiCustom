@@ -57,7 +57,7 @@
 	
 	//query per inserire il nuovo articolo all'intenro del dataBase
 	$sql = "INSERT INTO products (img, file, projectName, idUtente, partnersName , Specifier, leadTime,costumizationType,colorTemperature, CRI, stepMacAdam, beanAngle, ipRate, power, lumenOutput, intensity, efficacy, dimmability, driverIncluded, driverPosition, supplyVoltage, supplyFrequency, lifetime, madeIn, certification, colorFinish, reggianiRef, competitor, competitorProduct, targetPrice)";
-	$sql .= " VALUES ('".$img[sizeof($img) - 1]."', '".$pdf[sizeof($img) - 1]."','".$nome."','".$idUtente."', '".$partner."', '".$specifier."', '".$leadtime."', '".$customizationType."', '".$colorTemperature."', '".$cri."', '".$step."', '".$bean."', '".$ip."', '".$power."', '".$lumen."', '".$intensity."', '".$efficacy."', '".$dimmability."', '".$drives."', '".$drivesP."', '".$supply."', '".$supplyF."','".$lifetime."','".$certification."','".$colorFinish."', '".$ref."', '".$competitor."', '".$competitorP."', '".$price."')";
+	$sql .= " VALUES ('".$img[sizeof($img) - 1]."', '".$pdf[sizeof($pdf) - 1]."','".$nome."','".$idUtente."', '".$partner."', '".$specifier."', '".$leadtime."', '".$customizationType."', '".$colorTemperature."', '".$cri."', '".$step."', '".$bean."', '".$ip."', '".$power."', '".$lumen."', '".$intensity."', '".$efficacy."', '".$dimmability."', '".$drives."', '".$drivesP."', '".$supply."', '".$supplyF."','".$lifetime."','".$certification."','".$colorFinish."', '".$ref."', '".$competitor."', '".$competitorP."', '".$price."')";
 	
 	//echo $sql;
 	

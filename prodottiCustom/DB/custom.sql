@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 26, 2021 alle 11:49
+-- Creato il: Mag 28, 2021 alle 09:52
 -- Versione del server: 10.4.6-MariaDB
 -- Versione PHP: 7.3.8
 
@@ -35,15 +35,9 @@ CREATE TABLE `products` (
   `projectName` varchar(32) NOT NULL,
   `idUtente` int(11) NOT NULL,
   `partnersName` varchar(32) NOT NULL,
-  `projectTiming` varchar(32) NOT NULL,
   `Specifier` varchar(32) NOT NULL,
-  `location` varchar(32) NOT NULL,
-  `quantity` int(11) NOT NULL,
-  `projectClientValue` int(11) NOT NULL,
-  `priority` int(1) NOT NULL,
   `leadTime` int(11) NOT NULL,
-  `informationPriority` varchar(32) NOT NULL,
-  `costumizationTipe` varchar(32) NOT NULL,
+  `costumizationType` varchar(32) NOT NULL,
   `colorTemperature` int(11) NOT NULL,
   `CRI` int(11) NOT NULL,
   `stepMacAdam` int(2) NOT NULL,
@@ -54,8 +48,8 @@ CREATE TABLE `products` (
   `intensity` int(11) NOT NULL,
   `efficacy` int(11) NOT NULL,
   `dimmability` int(1) NOT NULL,
-  `diverIncludes` int(1) NOT NULL,
-  `diverPosition` int(1) NOT NULL,
+  `driverIncluded` int(1) NOT NULL,
+  `driverPosition` int(1) NOT NULL,
   `supplyVoltage` int(11) NOT NULL,
   `supplyFrequency` int(11) NOT NULL,
   `lifetime` varchar(32) NOT NULL,
@@ -63,9 +57,8 @@ CREATE TABLE `products` (
   `certification` varchar(32) NOT NULL,
   `colorFinish` varchar(32) NOT NULL,
   `reggianiRef` int(11) NOT NULL,
-  `conpetitor` varchar(32) NOT NULL,
+  `competitor` varchar(32) NOT NULL,
   `competitorProduct` varchar(32) NOT NULL,
-  `sampleRequired` int(1) NOT NULL,
   `targetPrice` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -73,12 +66,12 @@ CREATE TABLE `products` (
 -- Dump dei dati per la tabella `products`
 --
 
-INSERT INTO `products` (`ID`, `img`, `file`, `projectName`, `idUtente`, `partnersName`, `projectTiming`, `Specifier`, `location`, `quantity`, `projectClientValue`, `priority`, `leadTime`, `informationPriority`, `costumizationTipe`, `colorTemperature`, `CRI`, `stepMacAdam`, `beamAngle`, `ipRate`, `power`, `lumenOutput`, `intensity`, `efficacy`, `dimmability`, `diverIncludes`, `diverPosition`, `supplyVoltage`, `supplyFrequency`, `lifetime`, `madeIn`, `certification`, `colorFinish`, `reggianiRef`, `conpetitor`, `competitorProduct`, `sampleRequired`, `targetPrice`) VALUES
-(1, 'lampada.jpg', '', '', 0, '', '', '', '', 0, 0, 0, 0, '', '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0, 0),
-(3, 'lampadina.jpg', 'lampadina.pdf', '', 0, '', '', '', '', 0, 0, 0, 0, '', '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0, 0),
-(4, 'lampione.jpg', '', '', 0, '', '', '', '', 0, 0, 0, 0, '', '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0, 0),
-(5, 'bajour.jpg', 'bajour.pdf', '', 0, '', '', '', '', 0, 0, 0, 0, '', '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0, 0),
-(6, 'lampadario.jpg', 'lampadario.pdf', '', 0, '', '', '', '', 0, 0, 0, 0, '', '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0, 0);
+INSERT INTO `products` (`ID`, `img`, `file`, `projectName`, `idUtente`, `partnersName`, `Specifier`, `leadTime`, `costumizationType`, `colorTemperature`, `CRI`, `stepMacAdam`, `beamAngle`, `ipRate`, `power`, `lumenOutput`, `intensity`, `efficacy`, `dimmability`, `driverIncluded`, `driverPosition`, `supplyVoltage`, `supplyFrequency`, `lifetime`, `madeIn`, `certification`, `colorFinish`, `reggianiRef`, `competitor`, `competitorProduct`, `targetPrice`) VALUES
+(1, 'lampada.jpg', '', '', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0),
+(3, 'lampadina.jpg', 'lampadina.pdf', '', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0),
+(4, 'lampione.jpg', '', '', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0),
+(5, 'bajour.jpg', 'bajour.pdf', '', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0),
+(6, 'lampadario.jpg', 'lampadario.pdf', '', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0);
 
 -- --------------------------------------------------------
 

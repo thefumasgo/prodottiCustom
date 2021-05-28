@@ -44,7 +44,7 @@
 		<?php
 			/*creo la query e se esiste la variabile $nome seleziono sono gli articoli aventi la variabile all'interno del nome, altrimenti li 
 			visualizzo tutti*/
-			$sql = "SELECT ID,name,characteristics,price,categoria,colorazione,img FROM products WHERE";
+			$sql = "SELECT * FROM products WHERE";
 			if(!empty($name) || !$name == null){
 				$sql .= " name LIKE '%".$name. "%' 
 				OR characteristics LIKE '%".$name. "%'
@@ -61,9 +61,9 @@
 				$sql .= " potenza BETWEEN '".$potMin."' AND '".$potMax."' AND";
 			}
 
-			$sql .= " 1 ORDER BY name";
+			$sql .= " 1 ORDER BY projectName";
 				
-			//echo $sql;
+			echo $sql;
 
 			$result = $conn->query($sql);
 
@@ -90,8 +90,8 @@
 					echo "<a href = 'infoProduct.php?idArticolo=".$row["ID"]."'><img class='imgProducts' src='".$_SESSION["imgFolder"].$row["img"]."'></br>";
 					echo '</div>';
 					
-					echo "<a href = 'infoProduct.php?idArticolo=".$row["ID"]."' class=''>".$row["name"]."</a>
-							".$row["price"]." €</br>";
+					echo "<a href = 'infoProduct.php?idArticolo=".$row["ID"]."' class=''>".$row["projectName"]."</a>
+							".$row["targetPrice"]." €</br>";
 					echo '</div>';	
 					
 					$count++;
