@@ -3,31 +3,24 @@
     include("connection.php");
 	include("navbar.php");
 
-    //se non esiste crea la variabile $nome per applicare il filtro sugli articoli
-
 	if(!empty($_GET['nameFilter'])){
-		$_SESSION['name'] = $_GET['nameFilter'];
+		$name = $_GET['nameFilter'];
 	}else{
-		$_SESSION['name']=null;
+		$name = null;
 	}
 
 		
-	if(!empty($_GET['cat'])){
-		$_SESSION['cat'] = $_GET['cat'];
+	if(!empty($_GET['cust'])){
+		$cust = $_GET['cust'];
 	}else{
-		$_SESSION['cat']=null;
+		$cust = null;
 	}
 
-	if(!empty($_GET['min']) && !empty($_GET['max'])){
-		$potMin = $_GET['min'];
-		$potMax = $_GET['max'];
+	if(!empty($_GET['val'])){
+		$power = $_GET['val'];
 	}else{
-		$potMin = null;
-		$potMax = null;
+		$power = null;
 	}
-	
-	$name = $_SESSION['name'];
-	$cat = $_SESSION['cat'];
 ?>
 <html>
 	<head>
@@ -42,35 +35,36 @@
 			</div>
 			
 		<?php
-			/*creo la query e se esiste la variabile $nome seleziono sono gli articoli aventi la variabile all'interno del nome, altrimenti li 
-			visualizzo tutti*/
 			$sql = "SELECT * FROM products WHERE";
 			if(!empty($name) || !$name == null){
-				$sql .= " name LIKE '%".$name. "%' 
-				OR characteristics LIKE '%".$name. "%'
-				OR colorazione LIKE '%".$name. "%'
-				OR categoria LIKE '%".$name. "%'
+				$sql .= " projectName LIKE '%".$name. "%'
+				OR partnersName LIKE '%".$name. "%'
+				OR Specifier LIKE '%".$name. "%'
+				OR lifetime LIKE '%".$name. "%'
+				OR madeIn LIKE '%".$name. "%'
+				OR colorFinish LIKE '%".$name. "%'
+				OR competitor LIKE '%".$name. "%'
+				OR competitorProduct LIKE '%".$name. "%'
 				AND";
 			}
 			
-			if(!empty($cat) || !$cat == null){
-				$sql .= " categoria='".$cat."' AND";
+			if(!empty($cust) || !$cust == null){
+				$sql .= " customizationType='".$cust."' AND";
 			}
 			
-			if(!empty($potMin) || !$potMin == null && !empty($potMax) || !$potMax == null){
-				$sql .= " potenza BETWEEN '".$potMin."' AND '".$potMax."' AND";
+			if(!empty($power) || !$power == null){
+				$sql .= " power = '".$power."' AND";
 			}
 
 			$sql .= " 1 ORDER BY projectName";
 				
-			echo $sql;
+			//echo $sql;
 
 			$result = $conn->query($sql);
 
 			$count = 4;	
             
 			if ($result->num_rows > 0){
-				//scorro tutti gli articoli selezionati e li visualizzo in una tabella
 				while($row = $result->fetch_assoc()){
 					$idCombo = 'idQuantita'.$row["ID"];
 					$idArticolo = $row["ID"];
@@ -83,7 +77,6 @@
 						echo '<div class="row">';
 					}
 
-					//visualizzo l'immagine, il nome e il prezzo dell'articolo
 					echo '<div class="col-sm-3">';
 					
 					echo '<div class="">';

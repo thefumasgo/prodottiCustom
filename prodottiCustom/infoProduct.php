@@ -19,7 +19,7 @@
 			$result = $conn->query($sql);
 
             if ($result->num_rows > 0)
-			while($row = $result->fetch_assoc()){
+			$row = $result->fetch_assoc();
                 echo "<img class='imgProduct' src='".$_SESSION['imgFolder'].$row["img"]."'/></br>";
 				echo '<a href="modificaImg.php?idArticolo='.$idArticolo.'">Modifica immagine prodotto</a></br>';
 				echo '</div>';
@@ -29,7 +29,7 @@
 				echo "<tr><td>Partners name: </td><td>".$row["partnersName"]."</td></tr>";
 				echo "<tr><td>Specifier: </td><td>".$row["Specifier"]."</td></tr>";
 				echo "<tr><td>Lead time: </td><td>".$row["leadTime"]."</td></tr>";
-				echo "<tr><td>Costumization type: </td><td>".$row["costumizationTipe"]."</td></tr>";
+				echo "<tr><td>Customization type: </td><td>".$row["customizationType"]."</td></tr>";
 				echo "<tr><td>Color temperature: </td><td>".$row["colorTemperature"]." K</td></tr>";
 				echo "<tr><td>CRI: </td><td>".$row["CRI"]."</td></tr>";
 				echo "<tr><td>Step MacAdam: </td><td>".$row["stepMacAdam"]."</td></tr>";
@@ -62,7 +62,7 @@
 				}else{
 					echo '<a href="addFile.php?idArticolo='.$idArticolo.'">Modifica file .pdf</a>';
 				}
-			}
+			
         ?>
 				</div> 
             </div> 

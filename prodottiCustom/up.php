@@ -10,13 +10,11 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-		<div style='width: 100%; text-align: center; margin-top: 50px;'>
-			<div style='width: 500px;' class='container-fluid'>
+			<div class='container'>
 			<div class='row'>	
-				<div class='col-sm-12'>
+				<div class='col-sm-4'>
 					
 					<form enctype="multipart/form-data" action="chkUP.php" method="POST">
-						<!--inserimento del nome del nuovo articolo-->
 						<div class="input-group input-group-sm mb-3">
   							<div class="input-group-prepend">
     							<span class="input-group-text" id="inputGroup-sizing-sm">Project name:</span>
@@ -24,15 +22,13 @@
   							<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="nameProject" required> 
 						</div>
 						
-						<!--inserimento della descrizione del nuovo articolo-->
 						<div class="input-group input-group-sm mb-3">
   							<div class="input-group-prepend">
     							<span class="input-group-text" id="inputGroup-sizing-sm">ID utente:</span>
  							</div>
-  							<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="nameIdUtente" required>
+  							<input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="nameIdUtente" required>
 						</div>
 						
-						<!--inserimento della quantità del nuovo articolo-->
 						<div class="input-group input-group-sm mb-3">
   							<div class="input-group-prepend">
     							<span class="input-group-text" id="inputGroup-sizing-sm">Partner's name:</span>
@@ -40,33 +36,41 @@
   							<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="namePartner" required>
 						</div>
 						
-						<!--inserimento del prezzo del nuovo articolo-->
+						<div class="input-group input-group-sm mb-3">
+  							<div class="input-group-prepend">
+    							<span class="input-group-text" id="inputGroup-sizing-sm">Specifier:</span>
+ 							</div>
+  							<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="nameSpecifier" required>
+						</div>
+						
 						<div class="input-group input-group-sm mb-3">
   							<div class="input-group-prepend">
     							<span class="input-group-text" id="inputGroup-sizing-sm">Lead time:</span>
  							</div>
-  							<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="nameLeadTime" required>
+  							<input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="nameLeadTime" required>
 						</div>
 						
-						<!--inserimento del prezzo del nuovo articolo-->
                         <div class="input-group input-group-sm mb-3">
   							<div class="input-group-prepend">
     							<span class="input-group-text" id="inputGroup-sizing-sm">Customization type:</span>
  							</div>
                             <select name="nameCustomizationType">
-                                <option></option>
                                 <option>Low</option>
                                 <option>Basic</option>
                                 <option>High</option>
                             </select>
 						</div>
 						
-						<!--inserimento del prezzo del nuovo articolo-->
 						<div class="input-group input-group-sm mb-3">
   							<div class="input-group-prepend">
     							<span class="input-group-text" id="inputGroup-sizing-sm">Color temperature: K</span>
  							</div>
-  							<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="nameTemperature" required>
+                            <select name="nameTemperature">
+                                <option></option>
+                                <option>2700</option>
+                                <option>3000</option>
+                                <option>4000</option>
+                            </select>
 						</div>
 
                         <div class="input-group input-group-sm mb-3">
@@ -75,10 +79,9 @@
  							</div>
                             <select name="nameCRI">
                                 <option></option>
-                                <option>>20</option>
-                                <option>>60</option>
-                                <option>>80</option>
-                                <option>>100</option>
+                                <option>&lt;80</option>
+                                <option>80-90</option>
+                                <option>>90</option>
                             </select>
 						</div>
 						
@@ -88,10 +91,7 @@
  							</div>
                             <select name="nameStep">
                                 <option></option>
-                                <option><2</option>
-                                <option><4</option>
-                                <option><6</option>
-                                <option><8</option>
+                                <option>&lt;4</option>
                             </select>
 						</div>
 						
@@ -101,9 +101,17 @@
  							</div>
                             <select name="nameBeam">
                                 <option></option>
-                                <option>Non</option>
-                                <option>Lo</option>
-                                <option>So</option>
+                                <option>Double asymmetric</option>
+                                <option>Very wide</option>
+                                <option>Very narrow</option>
+                                <option>Narrow</option>
+                                <option>Medium</option>
+                                <option>Medium-wide</option>
+                                <option>Wide</option>
+                                <option>Asymmetric</option>
+                                <option>Elliptical</option>
+                                <option>Wall washer</option>
+                                <option>Product</option>
                             </select>
 						</div>
 						
@@ -111,7 +119,19 @@
   							<div class="input-group-prepend">
     							<span class="input-group-text" id="inputGroup-sizing-sm">IP rate:</span>
  							</div>
-  							<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="nameIP" required>
+                            <select name="nameIP">
+                                <option></option>
+                                <option>IP20</option>
+                                <option>IP23</option>
+                                <option>IP40</option>
+                                <option>IP43</option>
+                                <option>IP44</option>
+                                <option>IP54</option>
+                                <option>IP55</option>
+                                <option>IP65</option>
+                                <option>IP66</option>
+                                <option>IP67</option>
+                            </select>
 						</div>
 						
                         <div class="input-group input-group-sm mb-3">
@@ -120,10 +140,11 @@
  							</div>
                             <select name="namePower">
                                 <option></option>
-                                <option>50</option>
-                                <option>60</option>
-                                <option>70</option>
-                                <option>80</option>
+                                <option>&lt;10</option>
+                                <option>10-25</option>
+                                <option>25-50</option>
+                                <option>50-70</option>
+                                <option>>70</option>
                             </select>
 						</div>
 						
@@ -133,9 +154,11 @@
  							</div>
                             <select name="nameLumen">
                                 <option></option>
-                                <option>>2000</option>
-                                <option>>3000</option>
-                                <option>>4000</option>
+                                <option>&lt;1000</option>
+                                <option>1001-2000</option>
+                                <option>2001-3000</option>
+                                <option>3001-4000</option>
+                                <option>4001-5000</option>
                                 <option>>5000</option>
                             </select>
 						</div>
@@ -144,11 +167,8 @@
   							<div class="input-group-prepend">
     							<span class="input-group-text" id="inputGroup-sizing-sm">Intensity: cd<span>
  							</div>
-                            <select name="nameIntesity">
+                            <select name="nameIntensity">
                                 <option></option>
-                                <option>>2000</option>
-                                <option>>3000</option>
-                                <option>>4000</option>
                                 <option>>5000</option>
                             </select>
 						</div>
@@ -159,13 +179,11 @@
  							</div>
                             <select name="nameEfficacy">
                                 <option></option>
-                                <option>>50</option>
-                                <option>>60</option>
-                                <option>>70</option>
                                 <option>>80</option>
                             </select>
 						</div>
-						
+					</div>	
+					<div class='col-sm-4'>
                         <div class="input-group input-group-sm mb-3">
   							<div class="input-group-prepend">
     							<span class="input-group-text" id="inputGroup-sizing-sm">Dimmability:<span>
@@ -176,7 +194,6 @@
                                 <option>Off</option>
                             </select>
 						</div>
-						
                         <div class="input-group input-group-sm mb-3">
   							<div class="input-group-prepend">
     							<span class="input-group-text" id="inputGroup-sizing-sm">Drivers included:<span>
@@ -195,7 +212,7 @@
                             <select name="nameDriversPos">
                                 <option></option>
                                 <option>Integrated</option>
-                                <option>-</option>
+                                <option>Not integrated</option>
                             </select>
 						</div>
 						
@@ -205,10 +222,7 @@
  							</div>
                             <select name="nameVoltage">
                                 <option></option>
-                                <option>100</option>
-                                <option>150</option>
-                                <option>200</option>
-                                <option>220</option>
+                                <option>220-240</option>
                             </select>
 						</div>
 						
@@ -218,10 +232,7 @@
  							</div>
                             <select name="nameFrequency">
                                 <option></option>
-                                <option>40</option>
-                                <option>50</option>
-                                <option>60</option>
-                                <option>70</option>
+                                <option>50-60</option>
                             </select>
 						</div>
 						
@@ -257,7 +268,6 @@
                             <select name="nameColorFinish">
                                 <option></option>
                                 <option>Reggiani</option>
-                                <option>-</option>
                             </select>
 						</div>
 						
@@ -265,7 +275,7 @@
   							<div class="input-group-prepend">
     							<span class="input-group-text" id="inputGroup-sizing-sm">Reggiani ref:</span>
  							</div>
-  							<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="nameRef" required>
+  							<input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="nameRef" required>
 						</div>
 						
 						<div class="input-group input-group-sm mb-3">
@@ -286,10 +296,9 @@
   							<div class="input-group-prepend">
     							<span class="input-group-text" id="inputGroup-sizing-sm">Price: &euro;</span>
  							</div>
-  							<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="namePrice" required>
+  							<input type="decimal" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="namePrice" required>
 						</div>
 
-						<!--inserimento dell'immagine del nuovo articolo-->
 						<div class="input-group input-group-sm mb-3">
   							<div class="input-group-prepend">
     							<span class="input-group-text" id="inputGroup-sizing-sm">Seleziona l'immagine:</span>
@@ -303,12 +312,12 @@
  							</div>
   							<input type="file" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="filepdf">
 						</div>
-						<!--bottone che porta alla pagina upConferma.php-->
 						<input type="submit" value="Inserisci prodotto"/>
+						</div>
+						<div class='col-sm-4'>
+						</div>
 					</form>
-				</div>
 			</div>
-		</div>
 		</div>
 	</body>
 </html>

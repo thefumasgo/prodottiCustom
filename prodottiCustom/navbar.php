@@ -26,27 +26,26 @@
             <ul class="navbar-nav mr-auto">
                 
                 <li class="nav-item">
-                    <a class='nav-link' href = 'up.php'>Inserisci nuovo prodotto</a>
+                    <a class='nav-link' href = 'up.php'>Insert new product</a>
                 </li>
             
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Categoria</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Customization type</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="list.php?cat=interni">Interni</a>
-                        <a class="dropdown-item" href="list.php?cat=esterni">Esterni</a>
-                        <a class="dropdown-item" href="list.php?cat=ottiche">Ottiche</a>
-                        <a class="dropdown-item" href="list.php?cat=binarieCanaline">Binarie canaline</a>
+                        <a class="dropdown-item" href="list.php?cust=Low">Low</a>
+                        <a class="dropdown-item" href="list.php?cust=Basic">Basic</a>
+                        <a class="dropdown-item" href="list.php?cust=High">High</a>
                     </div>
                 </li>
                 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Potenza</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Power</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="list.php?min=1&max=10">0-10</a>
-                        <a class="dropdown-item" href="list.php?min=10&max=25">10-25</a>
-                        <a class="dropdown-item" href="list.php?min=25&max=50">25-50</a>
-                        <a class="dropdown-item" href="list.php?min=50&max=70">50-70</a>
-                        <a class="dropdown-item" href="list.php?min=70&max=10000">70+</a>
+                        <a class="dropdown-item" href="list.php?val=<10">&lt;10</a>
+                        <a class="dropdown-item" href="list.php?val=10-25">10-25</a>
+                        <a class="dropdown-item" href="list.php?val=25-50">25-50</a>
+                        <a class="dropdown-item" href="list.php?val=50-70">50-70</a>
+                        <a class="dropdown-item" href="list.php?val=>70">>70</a>
                     </div>
                 </li>
             

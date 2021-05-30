@@ -18,18 +18,16 @@
 	$colorTemperature=$_POST["nameTemperature"];
 	$cri = $_POST["nameCRI"];
 	$step = $_POST["nameStep"];
-	$bean = $_POST["nameBean"];
+	$beam = $_POST["nameBeam"];
 	$ip = $_POST["nameIP"];
 	$power = $_POST["namePower"];
 	$lumen = $_POST["nameLumen"];
 	$intensity = $_POST["nameIntensity"];
 	$efficacy = $_POST["nameEfficacy"];
-	$dimmability = $_POST["nameDimmability"];
-	$drives = $_POST["nameDrivesInc"];
-	$drivesP = $_POST["nameDrivesPos"];
 	$supply = $_POST["nameVoltage"];
 	$supplyF = $_POST["nameFrequency"];
-	$lifetime = $_POST["nameLifetime"];
+	$madeIn = $_POST["nameMade"];
+	$lifetime = $_POST["nameLifeTime"];
 	$certification = $_POST["nameCertification"];
 	$colorFinish = $_POST["nameColorFinish"];
 	$ref = $_POST["nameRef"];
@@ -37,7 +35,24 @@
 	$competitorP = $_POST["nameCompetitorProduct"];
 	$price = $_POST["namePrice"];
 	
- 
+	if($_POST["nameDimmability"] == "On"){
+		$dimmability = 1;
+	}else{
+		$dimmability = 0;
+	}
+	
+	if($_POST["nameDriversInc"] == "Yes"){
+		$drivers = 1;
+	}else{
+		$drivers = 0;
+	}
+	
+	if($_POST["nameDriversPos"] == "Integrated"){
+		$driversP = 1;
+	}else{
+		$driversP = 0;
+	}
+
 	//$_FILES['userfile']['tmp_name']: Il nome del file temporaneo in cui il file caricato è salvato sul server.
 	if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
 		echo "File caricato correttamente!\n";
@@ -56,8 +71,8 @@
 	$pdf = (explode("/",$upFilePdf));
 	
 	//query per inserire il nuovo articolo all'intenro del dataBase
-	$sql = "INSERT INTO products (img, file, projectName, idUtente, partnersName , Specifier, leadTime,costumizationType,colorTemperature, CRI, stepMacAdam, beanAngle, ipRate, power, lumenOutput, intensity, efficacy, dimmability, driverIncluded, driverPosition, supplyVoltage, supplyFrequency, lifetime, madeIn, certification, colorFinish, reggianiRef, competitor, competitorProduct, targetPrice)";
-	$sql .= " VALUES ('".$img[sizeof($img) - 1]."', '".$pdf[sizeof($pdf) - 1]."','".$nome."','".$idUtente."', '".$partner."', '".$specifier."', '".$leadtime."', '".$customizationType."', '".$colorTemperature."', '".$cri."', '".$step."', '".$bean."', '".$ip."', '".$power."', '".$lumen."', '".$intensity."', '".$efficacy."', '".$dimmability."', '".$drives."', '".$drivesP."', '".$supply."', '".$supplyF."','".$lifetime."','".$certification."','".$colorFinish."', '".$ref."', '".$competitor."', '".$competitorP."', '".$price."')";
+	$sql = "INSERT INTO products (img, file, projectName, idUtente, partnersName, Specifier, leadTime, customizationType, colorTemperature, CRI, stepMacAdam, beamAngle, ipRate, power, lumenOutput, intensity, efficacy, dimmability, driverIncluded, driverPosition, supplyVoltage, supplyFrequency, lifetime, madeIn, certification, colorFinish, reggianiRef, competitor, competitorProduct, targetPrice)";
+	$sql .= " VALUES ('".$img[sizeof($img) - 1]."', '".$pdf[sizeof($pdf) - 1]."','".$nome."','".$idUtente."', '".$partner."', '".$specifier."', '".$leadtime."', '".$customizationType."', '".$colorTemperature."', '".$cri."', '".$step."', '".$beam."', '".$ip."', '".$power."', '".$lumen."', '".$intensity."', '".$efficacy."', '".$dimmability."', '".$drivers."', '".$driversP."', '".$supply."', '".$supplyF."','".$lifetime."','".$madeIn."','".$certification."','".$colorFinish."', '".$ref."', '".$competitor."', '".$competitorP."', '".$price."')";
 	
 	//echo $sql;
 	
