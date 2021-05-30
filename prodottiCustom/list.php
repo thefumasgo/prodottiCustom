@@ -9,7 +9,6 @@
 		$name = null;
 	}
 
-		
 	if(!empty($_GET['cust'])){
 		$cust = $_GET['cust'];
 	}else{
