@@ -9,6 +9,7 @@
 	$upPdf = 'D:/andre/XAMPP/htdocs/prodottiCustom/file/';
 	$upFilePdf = $upPdf . basename($_FILES['filepdf']['name']);
 	
+	$articolo = $_GET["idArticolo"];
 	$nome=$_POST["nameProject"];
 	$idUtente=$_POST["nameIdUtente"];
 	$partner=$_POST["namePartner"];
@@ -55,14 +56,35 @@
 	
 	//query per l'aggiornamento dei dati dell'articolo
 	$sql = "UPDATE products SET 
-			name = '".$nome."', 
-			characteristics = '".$descrizione."', 
-			price = '".$prezzo."', 
-			data = '".$data."', 
-			potenza = '".$potenza."', 
-			categoria = '".$categoria."', 
-			colorazione = '".$colorazione."' 
-			WHERE ID = ".$IDarticolo;
+			projectName = '".$nome."', 
+			idUtente = '".$idUtente."', 
+			partnersName = '".$partner."', 
+			Specifier = '".$specifier."', 
+			leadTime = '".$leadtime."', 
+			customizationType = '".$customizationType."', 
+			colorTemperature = '".$colorTemperature."', 
+			CRI = '".$cri."', 
+			stepMacAdam = '".$step."', 
+			beamAngle = '".$beam."', 
+			ipRate = '".$ip."', 
+			power = '".$power."', 
+			lumenOutput = '".$lumen."', 
+			intensity = '".$intensity."', 
+			efficacy = '".$efficacy."', 
+			dimmability = '".$dimmability."', 
+			driverIncluded = '".$drivers."', 
+			driverPosition = '".$driversP."', 
+			supplyVoltage = '".$supply."', 
+			supplyFrequency = '".$supplyF."', 
+			lifetime = '".$lifetime."', 
+			madeIn = '".$madeIn."', 
+			certification = '".$certification."', 
+			colorFinish = '".$colorFinish."', 
+			reggianiRef = '".$ref."', 
+			competitor = '".$competitor."', 
+			competitorProduct = '".$competitorP."', 
+			targetPrice = '".$price."'
+			WHERE ID = ".$articolo;
 	
 	echo $sql;
     
