@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 31, 2021 alle 18:15
+-- Creato il: Mag 31, 2021 alle 23:00
 -- Versione del server: 10.4.14-MariaDB
 -- Versione PHP: 7.4.11
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `5a_custom`
+-- Database: `custom`
 --
 
 -- --------------------------------------------------------
@@ -29,28 +29,28 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `products` (
   `ID` int(11) NOT NULL,
-  `img` varchar(32) NOT NULL,
-  `file` varchar(32) NOT NULL,
+  `img` varchar(128) NOT NULL,
+  `file` varchar(128) NOT NULL,
   `projectName` varchar(32) NOT NULL,
   `idUtente` int(11) NOT NULL,
   `partnersName` varchar(32) NOT NULL,
   `Specifier` varchar(32) NOT NULL,
   `leadTime` int(11) NOT NULL,
-  `costumizationType` varchar(32) NOT NULL,
+  `customizationType` varchar(32) NOT NULL,
   `colorTemperature` int(11) NOT NULL,
-  `CRI` int(11) NOT NULL,
-  `stepMacAdam` int(2) NOT NULL,
-  `beamAngle` int(11) NOT NULL,
+  `CRI` varchar(32) NOT NULL,
+  `stepMacAdam` varchar(32) NOT NULL,
+  `beamAngle` varchar(32) NOT NULL,
   `ipRate` varchar(32) NOT NULL,
-  `power` int(11) NOT NULL,
-  `lumenOutput` int(11) NOT NULL,
-  `intensity` int(11) NOT NULL,
-  `efficacy` int(11) NOT NULL,
-  `dimmability` int(1) NOT NULL,
-  `driverIncluded` int(1) NOT NULL,
-  `driverPosition` int(1) NOT NULL,
-  `supplyVoltage` int(11) NOT NULL,
-  `supplyFrequency` int(11) NOT NULL,
+  `power` varchar(32) NOT NULL,
+  `lumenOutput` varchar(32) NOT NULL,
+  `intensity` varchar(32) NOT NULL,
+  `efficacy` varchar(32) NOT NULL,
+  `dimmability` tinyint(1) NOT NULL,
+  `driverIncluded` tinyint(1) NOT NULL,
+  `driverPosition` tinyint(1) NOT NULL,
+  `supplyVoltage` varchar(32) NOT NULL,
+  `supplyFrequency` varchar(32) NOT NULL,
   `lifetime` varchar(32) NOT NULL,
   `madeIn` varchar(32) NOT NULL,
   `certification` varchar(32) NOT NULL,
@@ -58,19 +58,20 @@ CREATE TABLE `products` (
   `reggianiRef` int(11) NOT NULL,
   `competitor` varchar(32) NOT NULL,
   `competitorProduct` varchar(32) NOT NULL,
-  `targetPrice` int(11) NOT NULL
+  `targetPrice` decimal(11,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `products`
 --
 
-INSERT INTO `products` (`ID`, `img`, `file`, `projectName`, `idUtente`, `partnersName`, `Specifier`, `leadTime`, `costumizationType`, `colorTemperature`, `CRI`, `stepMacAdam`, `beamAngle`, `ipRate`, `power`, `lumenOutput`, `intensity`, `efficacy`, `dimmability`, `driverIncluded`, `driverPosition`, `supplyVoltage`, `supplyFrequency`, `lifetime`, `madeIn`, `certification`, `colorFinish`, `reggianiRef`, `competitor`, `competitorProduct`, `targetPrice`) VALUES
-(1, 'lampada.jpg', '', 'lampada', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0),
-(3, 'lampadina.jpg', 'lampadina.pdf', 'lampadina', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0),
-(4, 'lampione.jpg', '', 'lampione', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0),
-(5, 'bajour.jpg', 'bajour.pdf', 'bajour', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0),
-(6, 'lampadario.jpg', 'lampadario.pdf', 'lampadario', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0);
+INSERT INTO `products` (`ID`, `img`, `file`, `projectName`, `idUtente`, `partnersName`, `Specifier`, `leadTime`, `customizationType`, `colorTemperature`, `CRI`, `stepMacAdam`, `beamAngle`, `ipRate`, `power`, `lumenOutput`, `intensity`, `efficacy`, `dimmability`, `driverIncluded`, `driverPosition`, `supplyVoltage`, `supplyFrequency`, `lifetime`, `madeIn`, `certification`, `colorFinish`, `reggianiRef`, `competitor`, `competitorProduct`, `targetPrice`) VALUES
+(1, 'lampada.jpg', '', '', 0, '', '', 0, '', 0, '0', '0', '0', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', '', '', '', '', 0, '', '', '0.00'),
+(3, 'lampadina.jpg', 'lampadina.pdf', '', 0, '', '', 0, '', 0, '0', '0', '0', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', '', '', '', '', 0, '', '', '0.00'),
+(4, 'lampione.jpg', '', '', 0, '', '', 0, '', 0, '0', '0', '0', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', '', '', '', '', 0, '', '', '0.00'),
+(5, 'bajour.jpg', 'bajour.pdf', '', 0, '', '', 0, '', 0, '0', '0', '0', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', '', '', '', '', 0, '', '', '0.00'),
+(6, 'lampadario.jpg', 'lampadario.pdf', '', 0, '', '', 0, '', 0, '0', '0', '0', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', '', '', '', '', 0, '', '', '0.00'),
+(22, 'lampada_da_parete.jpg', 'Relazione Windows Server 2012.pdf', 'erg', 34, 'rfg', 'rg', 243, 'Low', 2700, '80-90', '<4', 'Double asymmetric', 'IP20', '<10', '<1000', '>5000', '>80', 1, 1, 1, '220-240', '50-60', 'lphwe35', 'Italy', 'CE', 'Reggiani', 456, 'iGuzzini', 'ert3', '367.00');
 
 -- --------------------------------------------------------
 
@@ -89,7 +90,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID`, `Username`, `Password`) VALUES
-(1, 'pippo', '0c88028bf3aa6a6a143ed846f2be1ea4');
+(1, 'pippo', 'f7b2993185f755d2212840328001bb2f');
 
 --
 -- Indici per le tabelle scaricate
@@ -115,7 +116,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT per la tabella `products`
 --
 ALTER TABLE `products`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT per la tabella `users`
