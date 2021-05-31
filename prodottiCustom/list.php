@@ -86,7 +86,7 @@
 				}
 			}
 			echo '</div>';
-			echo '</div>';
 		?>
+		</div>
 	</body>
 </html>
