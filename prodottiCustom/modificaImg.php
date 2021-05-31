@@ -22,7 +22,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm">Selezionare immagine:</span>
                             </div>
-                            <input type="file" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="userfile">
+                            <input type="file" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="userfile"/>
                         </div>
                         <input type="submit" value="Salva immagine"/>
                     </from>

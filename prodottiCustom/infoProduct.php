@@ -29,7 +29,7 @@
 				echo "<tr><td>Partners name: </td><td>".$row["partnersName"]."</td></tr>";
 				echo "<tr><td>Specifier: </td><td>".$row["Specifier"]."</td></tr>";
 				echo "<tr><td>Lead time: </td><td>".$row["leadTime"]."</td></tr>";
-				echo "<tr><td>Customization type: </td><td>".$row["customizationType"]."</td></tr>";
+				echo "<tr><td>Customization type: </td><td>".$row["costumizationType"]."</td></tr>";
 				echo "<tr><td>Color temperature: </td><td>".$row["colorTemperature"]." K</td></tr>";
 				echo "<tr><td>CRI: </td><td>".$row["CRI"]."</td></tr>";
 				echo "<tr><td>Step MacAdam: </td><td>".$row["stepMacAdam"]."</td></tr>";

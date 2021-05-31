@@ -10,8 +10,11 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
+			<br>
 			<div class='container'>
 			<div class='row'>	
+				<div class='col-sm-2'>
+				</div>
 				<div class='col-sm-4'>
 					
 					<form enctype="multipart/form-data" action="chkUP.php" method="POST">
@@ -314,7 +317,7 @@
 						</div>
 						<input type="submit" value="Inserisci prodotto"/>
 						</div>
-						<div class='col-sm-4'>
+						<div class='col-sm-2'>
 						</div>
 					</form>
 			</div>
