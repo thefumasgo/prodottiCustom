@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 28, 2021 alle 09:52
--- Versione del server: 10.4.6-MariaDB
--- Versione PHP: 7.3.8
+-- Creato il: Mag 31, 2021 alle 18:15
+-- Versione del server: 10.4.14-MariaDB
+-- Versione PHP: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `custom`
+-- Database: `5a_custom`
 --
 
 -- --------------------------------------------------------
@@ -67,11 +66,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`ID`, `img`, `file`, `projectName`, `idUtente`, `partnersName`, `Specifier`, `leadTime`, `costumizationType`, `colorTemperature`, `CRI`, `stepMacAdam`, `beamAngle`, `ipRate`, `power`, `lumenOutput`, `intensity`, `efficacy`, `dimmability`, `driverIncluded`, `driverPosition`, `supplyVoltage`, `supplyFrequency`, `lifetime`, `madeIn`, `certification`, `colorFinish`, `reggianiRef`, `competitor`, `competitorProduct`, `targetPrice`) VALUES
-(1, 'lampada.jpg', '', '', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0),
-(3, 'lampadina.jpg', 'lampadina.pdf', '', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0),
-(4, 'lampione.jpg', '', '', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0),
-(5, 'bajour.jpg', 'bajour.pdf', '', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0),
-(6, 'lampadario.jpg', 'lampadario.pdf', '', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0);
+(1, 'lampada.jpg', '', 'lampada', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0),
+(3, 'lampadina.jpg', 'lampadina.pdf', 'lampadina', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0),
+(4, 'lampione.jpg', '', 'lampione', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0),
+(5, 'bajour.jpg', 'bajour.pdf', 'bajour', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0),
+(6, 'lampadario.jpg', 'lampadario.pdf', 'lampadario', 0, '', '', 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -90,7 +89,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID`, `Username`, `Password`) VALUES
-(1, 'pippo', 'f7b2993185f755d2212840328001bb2f');
+(1, 'pippo', '0c88028bf3aa6a6a143ed846f2be1ea4');
 
 --
 -- Indici per le tabelle scaricate

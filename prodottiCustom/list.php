@@ -26,9 +26,10 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-		<div class="container"> <!--fluid-->
+		<div class="container-fluid"> <!--fluid-->
 			<div class="row">
-				<div class="col-sm-12">
+				<div class="col-2"></div>
+				<div class="col">
 					<h1>List of products</h1>
 				</div>
 			</div>
@@ -73,17 +74,12 @@
 					}
 
 					if($count % 4 == 0){
-						echo '<div class="row">';
+						echo '<div class="row"><div class="col-2"></div>';
 					}
 
-					echo '<div class="col-sm-3">';
-					
-					echo '<div class="">';
+					echo '<div class="col-2">';
 					echo "<a href = 'infoProduct.php?idArticolo=".$row["ID"]."'><img class='imgProducts' src='".$_SESSION["imgFolder"].$row["img"]."'></br>";
-					echo '</div>';
-					
-					echo "<a href = 'infoProduct.php?idArticolo=".$row["ID"]."' class=''>".$row["projectName"]."</a>
-							".$row["targetPrice"]." €</br>";
+					echo "<a href = 'infoProduct.php?idArticolo=".$row["ID"]."'>".$row["projectName"]."</a><br>".$row["targetPrice"]." €</br>";
 					echo '</div>';	
 					
 					$count++;
