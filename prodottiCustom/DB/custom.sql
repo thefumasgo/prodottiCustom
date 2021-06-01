@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 31, 2021 alle 23:00
--- Versione del server: 10.4.14-MariaDB
--- Versione PHP: 7.4.11
+-- Creato il: Giu 01, 2021 alle 09:55
+-- Versione del server: 10.4.6-MariaDB
+-- Versione PHP: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -66,12 +67,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`ID`, `img`, `file`, `projectName`, `idUtente`, `partnersName`, `Specifier`, `leadTime`, `customizationType`, `colorTemperature`, `CRI`, `stepMacAdam`, `beamAngle`, `ipRate`, `power`, `lumenOutput`, `intensity`, `efficacy`, `dimmability`, `driverIncluded`, `driverPosition`, `supplyVoltage`, `supplyFrequency`, `lifetime`, `madeIn`, `certification`, `colorFinish`, `reggianiRef`, `competitor`, `competitorProduct`, `targetPrice`) VALUES
-(1, 'lampada.jpg', '', '', 0, '', '', 0, '', 0, '0', '0', '0', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', '', '', '', '', 0, '', '', '0.00'),
+(1, 'lampada.jpg', 'Relazione Windows Server 2012.pdf', 'Lampada da lettura', 13, 'pippo', 'CEwef', 10, 'Basic', 3000, '80-90', '<4', 'Wide', 'IP67', '10-25', '>5000', '>5000', '>80', 1, 0, 0, '220-240', '50-60', '46LPld', 'Italy', 'CE', 'Reggiani', 15, 'iGuzzini', 'dfg', '199.99'),
 (3, 'lampadina.jpg', 'lampadina.pdf', '', 0, '', '', 0, '', 0, '0', '0', '0', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', '', '', '', '', 0, '', '', '0.00'),
-(4, 'lampione.jpg', '', '', 0, '', '', 0, '', 0, '0', '0', '0', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', '', '', '', '', 0, '', '', '0.00'),
+(4, 'lampione.jpg', '', 'Lampione', 22, 'pluto', 'cert', 21, 'High', 2700, '80-90', '<4', 'Narrow', 'IP67', '<10', '4001-5000', '>5000', '>80', 1, 0, 1, '220-240', '50-60', 'LP1239423', 'Italy', 'CE', 'Reggiani', 26, 'iGuzzini', 'eioprfgn', '123.45'),
 (5, 'bajour.jpg', 'bajour.pdf', '', 0, '', '', 0, '', 0, '0', '0', '0', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', '', '', '', '', 0, '', '', '0.00'),
 (6, 'lampadario.jpg', 'lampadario.pdf', '', 0, '', '', 0, '', 0, '0', '0', '0', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', '', '', '', '', 0, '', '', '0.00'),
-(22, 'lampada_da_parete.jpg', 'Relazione Windows Server 2012.pdf', 'erg', 34, 'rfg', 'rg', 243, 'Low', 2700, '80-90', '<4', 'Double asymmetric', 'IP20', '<10', '<1000', '>5000', '>80', 1, 1, 1, '220-240', '50-60', 'lphwe35', 'Italy', 'CE', 'Reggiani', 456, 'iGuzzini', 'ert3', '367.00');
+(22, 'lamapda_parete.jpg', 'Relazione Windows Server 2012.pdf', 'erg', 34, 'rfg', 'rg', 243, 'Low', 2700, '80-90', '<4', 'Double asymmetric', 'IP20', '<10', '<1000', '>5000', '>80', 1, 1, 1, '220-240', '50-60', 'lphwe35', 'Italy', 'CE', 'Reggiani', 456, 'iGuzzini', 'ert3', '367.00');
 
 -- --------------------------------------------------------
 

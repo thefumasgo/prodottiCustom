@@ -11,7 +11,7 @@
 	$row = $result->fetch_assoc();
 ?>
 
-<hmtl>
+<html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>

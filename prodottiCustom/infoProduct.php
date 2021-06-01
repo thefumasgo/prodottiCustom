@@ -20,6 +20,21 @@
 
             if ($result->num_rows > 0)
 			$row = $result->fetch_assoc();
+			if($row["dimmability"] == 0){
+				$dimmability = "Off";
+			}else{
+				$dimmability = "On";
+			}
+			if($row["driverIncluded"] == 0){
+				$driverIncluded = "No";
+			}else{
+				$driverIncluded = "Yes";
+			}
+			if($row["driverPosition"] == 0){
+				$driverPosition = "Not included";
+			}else{
+				$driverPosition = "Included";
+			}
                 echo "<img class='imgProduct' src='".$_SESSION['imgFolder'].$row["img"]."'/></br>";
 				echo '<a href="modificaImg.php?idArticolo='.$idArticolo.'">Modifica immagine prodotto</a></br>';
 				echo '</div>';
@@ -29,7 +44,7 @@
 				echo "<tr><td>Partners name: </td><td>".$row["partnersName"]."</td></tr>";
 				echo "<tr><td>Specifier: </td><td>".$row["Specifier"]."</td></tr>";
 				echo "<tr><td>Lead time: </td><td>".$row["leadTime"]."</td></tr>";
-				echo "<tr><td>Customization type: </td><td>".$row["costumizationType"]."</td></tr>";
+				echo "<tr><td>Customization type: </td><td>".$row["customizationType"]."</td></tr>";
 				echo "<tr><td>Color temperature: </td><td>".$row["colorTemperature"]." K</td></tr>";
 				echo "<tr><td>CRI: </td><td>".$row["CRI"]."</td></tr>";
 				echo "<tr><td>Step MacAdam: </td><td>".$row["stepMacAdam"]."</td></tr>";
@@ -39,9 +54,9 @@
 				echo "<tr><td>Lumen output: </td><td>".$row["lumenOutput"]." lm</td></tr>";
 				echo "<tr><td>Intensity: </td><td>".$row["intensity"]." cd</td></tr>";
 				echo "<tr><td>Efficacy: </td><td>".$row["efficacy"]." lm/W</td></tr>";
-				echo "<tr><td>Dimmability: </td><td>".$row["dimmability"]."</td></tr>";
-				echo "<tr><td>Driver included: </td><td>".$row["driverIncluded"]."</td></tr>";
-				echo "<tr><td>Driver position: </td><td>".$row["driverPosition"]."</td></tr>";
+				echo "<tr><td>Dimmability: </td><td>".$dimmability."</td></tr>";
+				echo "<tr><td>Driver included: </td><td>".$driverIncluded."</td></tr>";
+				echo "<tr><td>Driver position: </td><td>".$driverPosition."</td></tr>";
 				echo "<tr><td>Supply voltage: </td><td>".$row["supplyVoltage"]." V</td></tr>";
 				echo "<tr><td>Supply frequency: </td><td>".$row["supplyFrequency"]." Hz</td></tr>";
 				echo "<tr><td>Life time: </td><td>".$row["lifetime"]." h</td></tr>";

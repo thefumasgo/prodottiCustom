@@ -3,13 +3,13 @@
     include("connection.php");
 	
 	//Costruisco il path completo di destinazione
-	$uploaddir = 'D:/andre/XAMPP/htdocs/prodottiCustom/img/';
+	/*$uploaddir = 'D:/andre/XAMPP/htdocs/prodottiCustom/img/';
 	$uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
 
 	$upPdf = 'D:/andre/XAMPP/htdocs/prodottiCustom/file/';
-	$upFilePdf = $upPdf . basename($_FILES['filepdf']['name']);
+	$upFilePdf = $upPdf . basename($_FILES['filepdf']['name']);*/
 	
-	$articolo = $_GET["idArticolo"];
+	$IDarticolo = $_POST["nameIDarticolo"];
 	$nome=$_POST["nameProject"];
 	$idUtente=$_POST["nameIdUtente"];
 	$partner=$_POST["namePartner"];
@@ -84,9 +84,9 @@
 			competitor = '".$competitor."', 
 			competitorProduct = '".$competitorP."', 
 			targetPrice = '".$price."'
-			WHERE ID = ".$articolo;
+			WHERE ID = ".$IDarticolo;
 	
-	echo $sql;
+	//echo $sql;
     
     $conn->query($sql);
 	

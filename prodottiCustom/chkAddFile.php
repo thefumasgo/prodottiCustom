@@ -2,14 +2,15 @@
     include("chkSession.php");
     include("connection.php");
 
-	$upPdf = 'D:/andre/XAMPP/htdocs/prodottiCustom/file/';
+	//$upPdf = 'D:/andre/XAMPP/htdocs/prodottiCustom/file/';
+	$upPdf = 'C:/xampp/htdocs/prodottiCustom/file/';
 	$upFilePdf = $upPdf . basename($_FILES['filepdf']['name']);
     $idArticolo = $_POST['nameIDarticolo'];
 	
 	if (move_uploaded_file($_FILES['filepdf']['tmp_name'], $upFilePdf)) {
-		echo "File caricato correttamente!\n";
+		//echo "File caricato correttamente!\n";
 	} else {
-		echo "Errore upload!\n";
+		//echo "Errore upload!\n";
 	}
 	$pdf = (explode("/",$upFilePdf));
 	

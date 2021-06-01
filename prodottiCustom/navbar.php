@@ -23,6 +23,10 @@
             <ul class="navbar-nav mr-auto">
                 
                 <li class="nav-item">
+                    <a class='nav-link' href = 'list.php'>Home</a>
+                </li>
+
+                <li class="nav-item">
                     <a class='nav-link' href = 'up.php'>Insert new product</a>
                 </li>
             
@@ -32,6 +36,15 @@
                         <a class="dropdown-item" href="list.php?cust=Low">Low</a>
                         <a class="dropdown-item" href="list.php?cust=Basic">Basic</a>
                         <a class="dropdown-item" href="list.php?cust=High">High</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Color temperature</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="list.php?temp=2700">2700</a>
+                        <a class="dropdown-item" href="list.php?temp=3000">3000</a>
+                        <a class="dropdown-item" href="list.php?temp=4000">4000</a>
                     </div>
                 </li>
                 

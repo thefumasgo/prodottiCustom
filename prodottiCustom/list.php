@@ -20,6 +20,12 @@
 	}else{
 		$power = null;
 	}
+
+	if(!empty($_GET['temp'])){
+		$temp = $_GET['temp'];
+	}else{
+		$temp = null;
+	}
 ?>
 <html>
 	<head>
@@ -54,6 +60,10 @@
 			
 			if(!empty($power) || !$power == null){
 				$sql .= " power = '".$power."' AND";
+			}
+			
+			if(!empty($temp) || !$temp == null){
+				$sql .= " colorTemperature = '".$temp."' AND";
 			}
 
 			$sql .= " 1 ORDER BY projectName";
