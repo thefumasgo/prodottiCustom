@@ -2,7 +2,7 @@
 	include("connection.php");
 	include("chkSession.php");
 	
-	$_SESSION['page'] = 0;
+	$_SESSION['pag'] = 0;
 	include("navbar.php");
 ?>
 <html>

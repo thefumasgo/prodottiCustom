@@ -2,12 +2,20 @@
 	include("connection.php");
 	include("chkSession.php");
 	
-	$_SESSION['page'] = 0;
+	$_SESSION['pag'] = 0;
 	include("navbar.php");
 ?>
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<script>
+			function chkReggiani(){
+				if(document.getElementById("colorFinish").value == "Reggiani")
+					document.getElementById("reggianiRef").disabled = false;
+				else
+					document.getElementById("reggianiRef").disabled = true;
+			}
+		</script>
 	</head>
 	<body>
 			<br>
@@ -268,9 +276,10 @@
   							<div class="input-group-prepend">
     							<span class="input-group-text" id="inputGroup-sizing-sm">Color finish:<span>
  							</div>
-                            <select name="nameColorFinish">
+                            <select id="colorFinish" name="nameColorFinish" onchange="chkReggiani()">
                                 <option></option>
                                 <option>Reggiani</option>
+								<option>Other</option>
                             </select>
 						</div>
 						
@@ -278,7 +287,7 @@
   							<div class="input-group-prepend">
     							<span class="input-group-text" id="inputGroup-sizing-sm">Reggiani ref:</span>
  							</div>
-  							<input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="nameRef" required>
+  							<input id="reggianiRef" type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="nameRef" required disabled>
 						</div>
 						
 						<div class="input-group input-group-sm mb-3">

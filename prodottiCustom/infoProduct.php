@@ -1,6 +1,7 @@
 <?php
 	include("chkSession.php");
     include("connection.php");
+	$_SESSION["pag"]=2;
 	include("navbar.php");
 ?>
 
@@ -36,7 +37,12 @@
 				$driverPosition = "Included";
 			}
                 echo "<img class='imgProduct' src='".$_SESSION['imgFolder'].$row["img"]."'/></br>";
-				echo '<a href="modificaImg.php?idArticolo='.$idArticolo.'">Modifica immagine prodotto</a></br>';
+				echo "<img class='imgProduct' src='".$_SESSION['imgFolder']."/disegni/".$row["design"]."'/></br>";
+				$query = "SELECT admin FROM users WHERE ID = ".$_SESSION["userId"];
+				$ris = $conn->query($query);
+				$riga = $ris->fetch_assoc();
+                    if($riga["admin"] == 1)
+						echo '<a href="modificaImg.php?idArticolo='.$idArticolo.'">Modifica immagine prodotto</a></br>';
 				echo '</div>';
 				echo '<div class="col-sm-6">';
 				echo '<table class="tableProduct"><tr>';
@@ -71,11 +77,12 @@
 					echo "<tr><td>File: </td><td><a href='download.php?file=".$row["file"]."&idArt=".$idArticolo."' target='_thapa'>download</a></td></tr>";
 				}
                 echo '</table>';
-				echo '<a href="modifica.php?idArticolo='.$idArticolo.'">Modifica articolo</a></br>';
-				if($row["file"] == null){
-					echo '<a href="addFile.php?idArticolo='.$idArticolo.'">Aggiungi file .pdf</a>';
-				}else{
-					echo '<a href="addFile.php?idArticolo='.$idArticolo.'">Modifica file .pdf</a>';
+				if($riga["admin"] == 1){
+					echo '<a href="modifica.php?idArticolo='.$idArticolo.'">Modifica articolo</a></br>';
+					if($row["file"] == null)
+						echo '<a href="addFile.php?idArticolo='.$idArticolo.'">Aggiungi file .pdf</a>';
+					else
+						echo '<a href="addFile.php?idArticolo='.$idArticolo.'">Modifica file .pdf</a>';
 				}
 			
         ?>
