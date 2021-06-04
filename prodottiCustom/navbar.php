@@ -32,41 +32,10 @@
                     $sql = "SELECT admin FROM users WHERE ID=".$_SESSION['userId'];
                     $result = $conn->query($sql);
                     $row = $result->fetch_assoc();
-                    if($row["admin"] == 1)
+                    if($row["admin"] == 1){
                         echo "<li class='nav-item'><a class='nav-link' href = 'up.php'>Insert new product</a></li>";
-                    /*
-                    if($_SESSION["pag"]==1){
-                        $filtri = '<li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Customization type</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="list.php?cust=Low">Low</a>
-                                <a class="dropdown-item" href="list.php?cust=Basic">Basic</a>
-                                <a class="dropdown-item" href="list.php?cust=High">High</a>
-                            </div>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Color temperature</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="list.php?temp=2700">2700</a>
-                                <a class="dropdown-item" href="list.php?temp=3000">3000</a>
-                                <a class="dropdown-item" href="list.php?temp=4000">4000</a>
-                            </div>
-                        </li>
-                
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Power</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="list.php?val=<10">&lt;10</a>
-                                <a class="dropdown-item" href="list.php?val=10-25">10-25</a>
-                                <a class="dropdown-item" href="list.php?val=25-50">25-50</a>
-                                <a class="dropdown-item" href="list.php?val=50-70">50-70</a>
-                                <a class="dropdown-item" href="list.php?val=>70">>70</a>
-                            </div>
-                        </li>';
-                        echo $filtri;
+                        echo "<li class='nav-item'><a class='nav-link' href = 'inserisciCSV.php'>Insert new product by CSV</a></li>";
                     }
-                    */
                 ?>
             </ul>
             <?php

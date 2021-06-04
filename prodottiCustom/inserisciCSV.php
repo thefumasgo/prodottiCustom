@@ -13,16 +13,12 @@
 		<div class='container-fluid'>
 			<div class='row'>	
 				<div class='col-sm-12'>
-                    <form enctype="multipart/form-data" action="chkAddFile.php" method="POST">
-						<?php 
-							//utilizzo input type="hidden" per passare l'ID dell'articolo alla pagina successiva
-							echo '<input type="hidden" name="nameIDarticolo" value="'.$_GET["idArticolo"].'">';
-						?>
+                    <form enctype="multipart/form-data" action="chkInserisciCSV.php" method="POST">
                         <div class="input-group input-group-sm mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-sm">Selezionare file pdf:</span>
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Selezionare file csv:</span>
                             </div>
-                            <input type="file" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="filepdf">
+                            <input type="file" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="filecsv">
                         </div>
                         <input type="submit" value="Carica file"/>
                     </form>
