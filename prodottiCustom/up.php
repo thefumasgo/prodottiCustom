@@ -51,14 +51,31 @@
   							<div class="input-group-prepend">
     							<span class="input-group-text" id="inputGroup-sizing-sm">Specifier:</span>
  							</div>
-  							<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="nameSpecifier" required>
+							 <select name="nameSpecifier">
+								<option></option>
+                                <option>Standard</option>
+                                <option>Warm Dimming</option>
+                                <option>Tunable White</option>
+								<option>1700K</option>
+								<option>2200K</option>
+								<option>2700K</option>
+								<option>3000K</option>
+								<option>3500K</option>
+								<option>4000K</option>
+                            </select>
 						</div>
 						
 						<div class="input-group input-group-sm mb-3">
   							<div class="input-group-prepend">
     							<span class="input-group-text" id="inputGroup-sizing-sm">Lead time:</span>
  							</div>
-  							<input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="nameLeadTime" required>
+							<select name="nameLeadTime">
+                                <option></option>
+                                <option>2-4 settimane</option>
+                                <option>4-6 settimane</option>
+								<option>6-8 settimane</option>
+								<option>10-12 settimane</option>
+                            </select>
 						</div>
 						
                         <div class="input-group input-group-sm mb-3">
@@ -90,9 +107,12 @@
  							</div>
                             <select name="nameCRI">
                                 <option></option>
+								<option>Standard</option>
                                 <option>&lt;80</option>
-                                <option>80-90</option>
-                                <option>>90</option>
+								<option>&lt;85</option>
+								<option>&lt;90</option>
+								<option>&lt;95</option>
+								<option>&lt;98</option>
                             </select>
 						</div>
 						
@@ -102,7 +122,9 @@
  							</div>
                             <select name="nameStep">
                                 <option></option>
-                                <option>&lt;4</option>
+                                <option>&lt;2</option>
+								<option>&lt;3</option>
+								<option>&lt;4</option>
                             </select>
 						</div>
 						
@@ -112,17 +134,13 @@
  							</div>
                             <select name="nameBeam">
                                 <option></option>
-                                <option>Double asymmetric</option>
-                                <option>Very wide</option>
-                                <option>Very narrow</option>
-                                <option>Narrow</option>
-                                <option>Medium</option>
-                                <option>Medium-wide</option>
-                                <option>Wide</option>
-                                <option>Asymmetric</option>
-                                <option>Elliptical</option>
-                                <option>Wall washer</option>
-                                <option>Product</option>
+                                <option>Standard</option>
+                                <option>&lt;10°</option>
+                                <option>11-20°</option>
+                                <option>21-30°</option>
+                                <option>31-40°</option>
+                                <option>41-50°</option>
+                                <option>>50°</option>
                             </select>
 						</div>
 						
@@ -152,10 +170,11 @@
                             <select name="namePower">
                                 <option></option>
                                 <option>&lt;10</option>
-                                <option>10-25</option>
-                                <option>25-50</option>
-                                <option>50-70</option>
-                                <option>>70</option>
+                                <option>10-20</option>
+                                <option>21-30</option>
+                                <option>31-40</option>
+								<option>41-50</option>
+                                <option>>51</option>
                             </select>
 						</div>
 						
@@ -180,7 +199,14 @@
  							</div>
                             <select name="nameIntensity">
                                 <option></option>
-                                <option>>5000</option>
+                                <option>> 2500</option>
+								<option>> 3000</option>
+								<option>> 5000</option>
+								<option>> 7000</option>
+								<option>> 10000</option>
+								<option>> 15000</option>
+								<option>> 20000</option>
+								<option>> 25000</option>
                             </select>
 						</div>
 						
@@ -190,7 +216,11 @@
  							</div>
                             <select name="nameEfficacy">
                                 <option></option>
-                                <option>>80</option>
+                                <option>>60</option>
+								<option>>70</option>
+								<option>>80</option>
+								<option>>90</option>
+								<option>>100</option>
                             </select>
 						</div>
 					</div>	
@@ -201,8 +231,16 @@
  							</div>
                             <select name="nameDimmability">
                                 <option></option>
-                                <option>On</option>
-                                <option>Off</option>
+                                <option>Standard</option>
+                                <option>Bluetooth</option>
+								<option>DALI</option>
+								<option>DIMM 1-10V</option>
+								<option>Dimmer 1-10V / DALI / PUSH</option>
+								<option>Dimmer on board</option>
+								<option>Driver non inclusi</option>
+								<option>On-Off</option>
+								<option>Taglio di fase</option>
+								<option>Other Dimmability</option>
                             </select>
 						</div>
                         <div class="input-group input-group-sm mb-3">
@@ -233,7 +271,9 @@
  							</div>
                             <select name="nameVoltage">
                                 <option></option>
-                                <option>220-240</option>
+                                <option>220V - 240V</option>
+								<option>120V - 277V</option>
+								<option>120V</option>
                             </select>
 						</div>
 						
@@ -243,7 +283,8 @@
  							</div>
                             <select name="nameFrequency">
                                 <option></option>
-                                <option>50-60</option>
+                                <option>50Hz - 60Hz </option>
+								<option>60Hz </option>
                             </select>
 						</div>
 						
@@ -251,7 +292,15 @@
   							<div class="input-group-prepend">
     							<span class="input-group-text" id="inputGroup-sizing-sm">Life time: h</span>
  							</div>
-  							<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="nameLifeTime" required>
+							<select name="nameLifeTime">
+                                <option></option>
+                                <option>L90 B10 50.000h</option>
+                                <option>L90 B50 50.000h</option>
+								<option>L80 B10 50.000h</option>
+								<option>L80 B50 50.000h</option>
+								<option>L70 B10 50.000h</option>
+								<option>L70 B50 50.000h</option>
+                            </select>
 						</div>
 						
                         <div class="input-group input-group-sm mb-3">
@@ -308,7 +357,13 @@
   							<div class="input-group-prepend">
     							<span class="input-group-text" id="inputGroup-sizing-sm">Price: &euro;</span>
  							</div>
-  							<input type="decimal" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="namePrice" required>
+							<select id="idPrice" name="namePrice" onchange="chkReggiani()">
+                                <option></option>
+                                <option> &lt;25.000€ </option>
+								<option> 25.000 - 50.000 €</option>
+								<option> 50.000 - 200.000 €</option>
+								<option> >200.000 € </option>
+                            </select>
 						</div>
 
 						<div class="input-group input-group-sm mb-3">
